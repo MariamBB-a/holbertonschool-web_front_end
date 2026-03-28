@@ -1,5 +1,13 @@
 ```css
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* (normalize.css remains unchanged — omitted here for brevity in explanation but KEEP yours exactly) */
+
 /* Root */
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
 
 :root{
   --color-primary: #d73953;
@@ -8,24 +16,20 @@
   --color-light-grey: #f3f3f3;
   --color-dark-grey: #353535;
   --text-color: var(--color-black);
-
-  --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-title: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  --font-size-small: 1.2rem;
-  --font-size-medium: 1.6rem;
-  --font-size-large: 1.8rem;
-  --font-size-x-large: 2.3rem;
-  --font-size-xx-large: 4.8rem;
-
+  --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+  --font-family-title: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif ;
+  --font-size-small: 1.2rem ;
+  --font-size-medium: 1.6rem ;
+  --font-size-large: 1.8rem ;
+  --font-size-x-large: 2.3rem ;
+  --font-size-xx-large: 4.8rem ;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
-
-  --line-height-small: 1.2;
+  --line-height-small: 1.2 ;
   --line-height-base: 1.5;
   --line-height-big: 1.8;
 
-  --transition-duration: 0.3s;
+  --transition-duration: .3s;
   --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
@@ -39,8 +43,8 @@
   color: var(--color-black);
   text-decoration: none;
 
-  transition-property: color, background-color;
   transition-duration: var(--transition-duration);
+  transition-property: color, background-color;
 }
 
 .button:hover{
@@ -48,23 +52,10 @@
   background-color: var(--color-primary);
 }
 
-/* NAVIGATION */
+/* NAV */
 
 .nav .nav-link::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-white);
-  width: 0;
-  height: 0.2rem;
-
   transition: var(--transition-duration) var(--transition-cubic-bezier);
-}
-
-.nav .nav-item:hover .nav-link::before{
-  background-color: var(--color-primary);
-  width: 100%;
 }
 
 /* CARD WORK */
@@ -81,18 +72,15 @@
   vertical-align: bottom;
 }
 
-/* Image zoom */
 .card-work:hover .card-image{
   transform: scale(1.2);
   transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
-/* Outer shrink */
 .card-work:hover .card-outer{
   transform: scale(0.95);
 }
 
-/* Inner overlay */
 .card-work .card-inner{
   position: absolute;
   top: -0.1rem;
@@ -101,22 +89,5 @@
   z-index: 1;
 
   transition: var(--transition-duration) var(--transition-cubic-bezier);
-}
-
-.card-work:hover .card-inner{
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* Title fade */
-.card-work .card-title{
-  text-align: center;
-  margin: 0;
-  opacity: 0;
-  height: 100%;
-  position: relative;
-}
-
-.card-work:hover .card-title{
-  opacity: 1;
 }
 ```
