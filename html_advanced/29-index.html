@@ -3,101 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techium - Client Quotes</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
+    <meta name="description" content="Techium is a digital agency dedicated to helping businesses grow online.">
+    <title>Homepage - Techium</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom styles to enhance the aesthetic */
         body {
-            font-family: 'Inter', sans-serif; /* A more refined sans-serif */
-            background-color: #f8f5f2; /* Soft, warm background */
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f5f2; /* Light, warm background */
+            color: #4a4a4a;
         }
-        h1, h2, h3 {
-            font-family: 'Lora', serif; /* A distinctive serif for headings */
-            color: #2c3e50; /* Darker tone for headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+            color: #1a202c;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        /* Blockquote styling for visual impact */
-        blockquote {
-            font-style: italic;
+        .custom-blockquote {
             position: relative;
-            padding-left: 2rem; /* Space for the large quote mark */
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            padding-left: 1.5rem; /* Space for the quote mark */
         }
-        blockquote::before {
-            content: "“";
-            font-family: 'Lora', serif; /* Use heading font for the quote mark */
-            font-size: 5rem; /* Larger quote mark */
+        .custom-blockquote::before {
+            content: '“';
+            font-family: 'Lora', serif;
             position: absolute;
             left: 0;
-            top: -1rem;
-            color: #b0a8a1; /* Muted, elegant quote color */
+            top: 0;
+            font-size: 4rem; /* Large quote mark */
             line-height: 1;
+            color: #b0a8a1; /* Muted color for the quote mark */
             opacity: 0.6;
         }
-        /* Minor hover effect for navigation */
-        nav a:hover {
-            color: #4a90e2; /* A subtle blue accent on hover */
+        .nav-link {
+            position: relative;
+            color: #4a4a4a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3182ce; /* Blue underline */
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
     </style>
 </head>
 <body class="antialiased">
     <header class="bg-white shadow-sm py-4">
-        <div class="container flex justify-between items-center">
-            <div class="text-3xl font-bold text-gray-800 tracking-wide">Techium</div>
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-900">Techium</div>
             <nav>
-                <ul class="flex space-x-8">
-                    <li><a href="#" class="text-gray-600 text-lg hover:text-gray-900 transition-colors duration-200 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span></a></li>
-                    <li><a href="#" class="text-gray-600 text-lg hover:text-gray-900 transition-colors duration-200 relative group">Services<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span></a></li>
-                    <li><a href="#" class="text-gray-600 text-lg hover:text-gray-900 transition-colors duration-200 relative group">Testimonials<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span></a></li>
-                    <li><a href="#" class="text-gray-600 text-lg hover:text-gray-900 transition-colors duration-200 relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span></a></li>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="#" class="nav-link">About Us</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="py-16">
-        <section id="testimonials" class="container bg-white p-10 rounded-xl shadow-lg border border-gray-100">
-            <h2 class="text-5xl font-bold text-center mb-12 leading-tight">What Our Clients Say</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <article class="flex flex-col items-center text-center p-8 bg-gray-50 rounded-lg shadow-sm border border-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <blockquote class="text-2xl text-gray-700 leading-relaxed mb-6">
-                        "I am completely blown away. Thanks to Techium, we've just launched our 5th website!"
-                    </blockquote>
-                    <p class="font-semibold text-gray-900 text-xl">- Yuri Y.</p>
-                </article>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 md:py-32 flex items-center justify-center text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Empowering Your Digital Future</h1>
+                <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">Innovative solutions for a connected world. Let's build something amazing together.</p>
+                <a href="#" class="inline-block bg-white text-blue-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">Get Started</a>
+            </div>
+        </section>
 
-                <article class="flex flex-col items-center text-center p-8 bg-gray-50 rounded-lg shadow-sm border border-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <blockquote class="text-2xl text-gray-700 leading-relaxed mb-6">
-                        "Thank you so much for your help. Techium company is awesome!"
-                    </blockquote>
-                    <p class="font-semibold text-gray-900 text-xl">- Dorrie S.</p>
-                </article>
+        <!-- Services Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold font-heading text-gray-900 mb-10">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Web Development</h3>
+                        <p class="text-gray-600">Building responsive and high-performance websites tailored to your needs.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Digital Marketing</h3>
+                        <p class="text-gray-600">Strategies to boost your online presence and reach your target audience.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition duration-300 ease-in-out">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">UI/UX Design</h3>
+                        <p class="text-gray-600">Creating intuitive and engaging user experiences that delight your customers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <article class="flex flex-col items-center text-center p-8 bg-gray-50 rounded-lg shadow-sm border border-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <blockquote class="text-2xl text-gray-700 leading-relaxed mb-6">
-                        "I love your system. Definitely worth the investment. I'd be lost without Techium company."
-                    </blockquote>
-                    <p class="font-semibold text-gray-900 text-xl">- Sven H.</p>
-                </article>
+        <!-- About Us Section -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold font-heading text-gray-900 mb-10">About Techium</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Techium is a leading digital agency committed to delivering innovative and effective solutions.
+                    We combine creativity with technical expertise to help businesses thrive in the digital landscape.
+                </p>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="relative py-16 bg-gray-50 overflow-hidden">
+            <div class="relative container mx-auto px-4">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold font-heading text-gray-900">What our clients say</h2>
+                </div>
+                <div class="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Article 1 -->
+                    <article class="relative flex flex-col p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="relative z-10">
+                            <blockquote class="text-lg text-gray-700 leading-relaxed custom-blockquote">
+                                <p>I am completely blown away. Thanks to Techium, we've just launched our 5th website!</p>
+                                <p class="mt-4 text-right font-semibold text-gray-900">— Yuri Y.</p>
+                            </blockquote>
+                        </div>
+                    </article>
+                    <!-- Article 2 -->
+                    <article class="relative flex flex-col p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="relative z-10">
+                            <blockquote class="text-lg text-gray-700 leading-relaxed custom-blockquote">
+                                <p>Thank you so much for your help. Techium company is awesome!</p>
+                                <p class="mt-4 text-right font-semibold text-gray-900">— Dorrie S.</p>
+                            </blockquote>
+                        </div>
+                    </article>
+                    <!-- Article 3 -->
+                    <article class="relative flex flex-col p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="relative z-10">
+                            <blockquote class="text-lg text-gray-700 leading-relaxed custom-blockquote">
+                                <p>I love your system. Definitely worth the investment. I'd be lost without Techium company.</p>
+                                <p class="mt-4 text-right font-semibold text-gray-900">— Sven H.</p>
+                            </blockquote>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold font-heading text-gray-900 mb-10">Get in Touch</h2>
+                <p class="text-lg text-gray-700 max-w-xl mx-auto mb-8">
+                    Have a project in mind? We'd love to hear from you. Contact us today to discuss your needs.
+                </p>
+                <a href="#" class="inline-block bg-blue-600 text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">Contact Us</a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-300 py-8 mt-16">
-        <div class="container text-center text-sm">
-            <p>&copy; 2026 Techium. All rights reserved.</p>
-            <p class="mt-2">Designed with care for Holberton School.</p>
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Techium. All rights reserved.</p>
         </div>
     </footer>
 </body>
